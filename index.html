@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Friend — Find your perfect pet & care for them like a pro</title>
+  <meta name="description" content="Best Friend is the breed-smart app that matches you to your ideal dog or cat by lifestyle, then guides you with daily care, health tracking and reminders. Free on the App Store." />
+  <meta name="theme-color" content="#17ead9" />
+  <link rel="canonical" href="https://bestfriendapps.com/" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/logo/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.png" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Best Friend — Find your perfect pet & care for them like a pro" />
+  <meta property="og:description" content="The breed-smart app that matches you to your ideal dog or cat, then guides you with daily care, health tracking and reminders." />
+  <meta property="og:image" content="assets/logo/og-share.png" />
+  <meta property="og:url" content="https://bestfriendapps.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Friend — Find your perfect pet & care for them like a pro" />
+  <meta name="twitter:description" content="The breed-smart app that matches you to your ideal dog or cat, then guides you with daily care, health tracking and reminders." />
+  <meta name="twitter:image" content="assets/logo/og-share.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Best Friend: Pet Care",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Breed-smart pet companion. Match with your ideal dog or cat by lifestyle, then get daily care, health tracking and reminders.",
+    "url": "https://bestfriendapps.com/",
+    "downloadUrl": "https://apps.apple.com/app/id6761103192",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="nav__brand" href="#top" aria-label="Best Friend home">
+        <img src="assets/logo/logo.png" alt="" width="42" height="42" />
+        <span>Best Friend</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#features">Features</a>
+        <a class="nav__link" href="#how">How it works</a>
+        <a class="nav__link" href="#pricing">Pricing</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <a class="nav__link" href="support.html">Support</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--primary nav__cta" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Download</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="support.html">Support</a>
+    <a class="btn btn--primary btn--lg" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Download free</a>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+            Your breed-smart pet companion
+          </span>
+          <h1 class="hero__title reveal" style="--delay:.05s">Find the <span class="gradient-text">right pet</span> for your life — then be their best friend.</h1>
+          <p class="hero__sub reveal" style="--delay:.12s">Best Friend matches you to your ideal dog or cat by lifestyle, then guides you with breed-smart daily care, health tracking and gentle reminders.</p>
+          <div class="hero__actions reveal" style="--delay:.18s">
+            <a class="appstore" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener" aria-label="Download on the App Store">
+              <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85.5-19-27.2-47.5-42.2-85.2-45-35.8-2.7-75 21-89.2 21-15 0-49.6-20-76.4-20C71.1 138.9 18 175.8 18 250.5c0 22.6 4.1 46 12.4 70.1 11 31.6 50.7 109 92.1 107.7 21.6-.5 36.9-15.4 65-15.4 27.2 0 41.3 15.4 65.3 15.4 41.8-.6 77.7-71 88.2-102.7-56.1-26.4-53.3-77.4-53.3-79zM258.8 90.7c20.9-24.8 19-47.4 18.4-55.5-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.7 20 1.5 38.2-8.8 53.3-26z"/></svg>
+              <span class="appstore__txt"><small>Download on the</small><span>App Store</span></span>
+            </a>
+            <span class="soon">Android coming soon</span>
+          </div>
+          <div class="hero__trust reveal" style="--delay:.24s">
+            <span class="hero__chip">
+              <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="15.5" rx="5" ry="4"/><circle cx="6.5" cy="10" r="2"/><circle cx="17.5" cy="10" r="2"/><circle cx="9.5" cy="6.5" r="1.8"/><circle cx="14.5" cy="6.5" r="1.8"/></svg>
+              85 dog &amp; cat breeds
+            </span>
+            <span class="hero__chip">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+              7-day free Premium trial
+            </span>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal--scale" style="--delay:.2s">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <svg class="arc-deco" viewBox="0 0 300 170" aria-hidden="true">
+            <defs><linearGradient id="sun" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#17ead9"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
+            <g fill="none" stroke="url(#sun)" stroke-width="11" stroke-linecap="round">
+              <path d="M22 162 A128 128 0 0 1 278 162"/>
+              <path d="M52 162 A98 98 0 0 1 248 162" opacity=".7"/>
+              <path d="M82 162 A68 68 0 0 1 218 162" opacity=".5"/>
+              <path d="M112 162 A38 38 0 0 1 188 162" opacity=".32"/>
+            </g>
+          </svg>
+          <div class="phone phone--floaty">
+            <img class="phone__screen" src="assets/screens/quiz-intro.png" alt="Best Friend app quiz that matches you with the right dog or cat breed for your lifestyle" width="300" height="634" />
+          </div>
+          <img class="hero__photo" src="assets/img/hero-dog.jpg" alt="Happy golden retriever" width="188" height="188" loading="lazy" />
+          <img class="hero__photo hero__photo--2" src="assets/img/hero-cat.jpg" alt="Content tabby cat" width="120" height="120" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="stats reveal">
+          <div class="stat"><div class="stat__num"><span class="gradient-text" data-count="85">0</span></div><div class="stat__label">Dog &amp; cat breeds</div></div>
+          <div class="stat"><div class="stat__num"><span class="gradient-text" data-count="12">0</span></div><div class="stat__label">Question match quiz</div></div>
+          <div class="stat"><div class="stat__num"><span class="gradient-text" data-count="100" data-suffix="%">0</span></div><div class="stat__label">Breed-personalised care</div></div>
+          <div class="stat"><div class="stat__num"><span class="gradient-text" data-count="7">0</span></div><div class="stat__label">Day free Premium trial</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROMISE ============ -->
+    <section class="section section--warm">
+      <div class="container promise__inner">
+        <div class="promise__media reveal reveal--left">
+          <img src="assets/img/promise.jpg" alt="A person sitting outdoors hugging their dog" width="640" height="480" loading="lazy" />
+          <div class="sticker">
+            <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="15.5" rx="5" ry="4"/><circle cx="6.5" cy="10" r="2"/><circle cx="17.5" cy="10" r="2"/><circle cx="9.5" cy="6.5" r="1.8"/><circle cx="14.5" cy="6.5" r="1.8"/></svg>
+            <div><b>Breed-smart from day one</b><span>Guidance tuned to your pet</span></div>
+          </div>
+        </div>
+        <div class="promise__text reveal reveal--right">
+          <span class="eyebrow eyebrow--gold">The promise</span>
+          <h2>Choosing a pet shouldn't be a gamble. Caring for one shouldn't be guesswork.</h2>
+          <p>Quizzes hand you a breed, then vanish. Generic trackers treat a Great Dane like a kitten. Best Friend connects the whole journey — from choosing the right match to caring for them beautifully.</p>
+          <p>Because every feature is powered by real breed knowledge, the advice actually fits the pet in front of you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2 class="section__title">From "which pet?" to "best owner ever" in three steps</h2>
+          <p class="section__lead">A few minutes to find your match — then a friendly hand for the years that follow.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal" style="--delay:.05s">
+            <div class="step__num">1</div>
+            <h3 class="step__title">Take the 2-minute quiz</h3>
+            <p class="step__text">Answer 12 quick questions about your home, schedule, and what you're hoping for in a companion.</p>
+          </article>
+          <article class="step reveal" style="--delay:.15s">
+            <div class="step__num">2</div>
+            <h3 class="step__title">Meet your ranked matches</h3>
+            <p class="step__text">See the dog and cat breeds that fit your life, each scored for compatibility with clear reasons why.</p>
+          </article>
+          <article class="step reveal" style="--delay:.25s">
+            <div class="step__num">3</div>
+            <h3 class="step__title">Care like a pro, daily</h3>
+            <p class="step__text">Follow breed-smart tasks, track health, and stay on top of everything with gentle reminders.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES (BENTO) ============ -->
+    <section class="section section--mint" id="features">
+      <div class="container container--wide">
+        <div class="section__head reveal">
+          <span class="eyebrow">Everything in one app</span>
+          <h2 class="section__title">Made to help you choose — and to care for years to come.</h2>
+          <p class="section__lead">Real screenshots from the app. Premium features are marked.</p>
+        </div>
+
+        <div class="bento">
+          <!-- Quiz -->
+          <article class="fcard reveal" style="--delay:.04s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 3h6v3H9z"/><path d="M9 11h6M9 15h4"/></svg></div>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">Breed-match quiz</h3>
+              <p class="fcard__text">12 questions, then dog &amp; cat breeds ranked by how well they fit your lifestyle — with a clear reason for every match.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/matches.png" alt="App screen showing top breed matches with compatibility percentages" width="520" height="390" loading="lazy" /></div>
+          </article>
+
+          <!-- Encyclopedia -->
+          <article class="fcard reveal" style="--delay:.1s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M19 18H6a2 2 0 0 0-2 2"/><path d="M9 7h6M9 10h6"/></svg></div>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">85-breed encyclopedia</h3>
+              <p class="fcard__text">Temperament, exercise, grooming, diet, common health issues and lifespan for 85 dog and cat breeds.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/breeds.png" alt="App screen showing the searchable breed encyclopedia grid" width="520" height="390" loading="lazy" /></div>
+          </article>
+
+          <!-- Compare -->
+          <article class="fcard reveal" style="--delay:.16s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6M5 11V3M12 21v-8M12 9V3M19 21v-5M19 12V3"/><circle cx="5" cy="13" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="19" cy="14" r="2"/></svg></div>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">Compare breeds</h3>
+              <p class="fcard__text">Put breeds side by side on size, shedding, barking, kid-friendliness and more before you decide.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/compare.png" alt="App screen comparing three breeds side by side" width="520" height="390" loading="lazy" /></div>
+          </article>
+
+          <!-- Health (premium) -->
+          <article class="fcard fcard--premium reveal" style="--delay:.04s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6 12 20l-7.5-7.4a4.5 4.5 0 1 1 6.4-6.3l1.1 1.1 1.1-1.1a4.5 4.5 0 1 1 6.4 6.3z"/></svg></div>
+              <span class="badge-premium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l4.5 3L12 5l4.5 6L21 8l-1.7 10.5a1 1 0 0 1-1 .8H5.7a1 1 0 0 1-1-.8L3 8z"/></svg>Premium</span>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">Health tracking</h3>
+              <p class="fcard__text">Log weight, vet visits, vaccinations and medications, and see your pet's whole history at a glance.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/health.png" alt="App screen showing a pet's health records and upcoming vaccinations" width="520" height="390" loading="lazy" /></div>
+          </article>
+
+          <!-- Daily care (premium) -->
+          <article class="fcard fcard--premium reveal" style="--delay:.1s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6h9M11 12h9M11 18h9"/><path d="m3 6 1.4 1.4L7 5M3 12l1.4 1.4L7 11M3 18l1.4 1.4L7 17"/></svg></div>
+              <span class="badge-premium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l4.5 3L12 5l4.5 6L21 8l-1.7 10.5a1 1 0 0 1-1 .8H5.7a1 1 0 0 1-1-.8L3 8z"/></svg>Premium</span>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">Daily care dashboard</h3>
+              <p class="fcard__text">Breed-specific feeding, walks, grooming and milestones. Check them off and build a care streak you'll want to keep.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/dashboard.png" alt="App screen showing the daily care dashboard with breed-specific care tips for the day" width="520" height="390" loading="lazy" /></div>
+          </article>
+
+          <!-- Grooming & feeding schedules (free, part of the breed encyclopedia) -->
+          <article class="fcard reveal" style="--delay:.16s">
+            <div class="fcard__top">
+              <div class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 9.5h18M8 3v3M16 3v3"/><path d="m8.5 14.5 2 2 4-4"/></svg></div>
+            </div>
+            <div class="fcard__body">
+              <h3 class="fcard__title">Grooming &amp; feeding schedules</h3>
+              <p class="fcard__text">Breed-specific routines — how often to brush, bathe and trim, plus how much to feed at every life stage.</p>
+            </div>
+            <div class="fcard__media"><img src="assets/screens/breed-care.png" alt="App screen showing breed-specific grooming and feeding schedules" width="600" height="1300" loading="lazy" /></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BREED INTELLIGENCE ============ -->
+    <section class="section intel">
+      <div class="container intel__inner">
+        <div class="intel__text reveal reveal--left">
+          <span class="eyebrow">Why it's different</span>
+          <h2>Breed intelligence powers everything.</h2>
+          <p>Most apps treat every pet the same. Best Friend doesn't. From your first match to today's walk, every recommendation is tuned to your specific breed's real needs.</p>
+          <ul class="intel__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Matches scored on your actual lifestyle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Care tasks calibrated by breed and age</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Health milestones that fit your pet</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Reminders written around your breed</li>
+          </ul>
+        </div>
+        <div class="intel__media reveal reveal--right" style="display:flex;justify-content:center">
+          <div class="phone">
+            <img class="phone__screen" src="assets/screens/breed.png" alt="App screen showing a breed profile with breed-specific care guidance" width="300" height="634" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--gold">Simple pricing</span>
+          <h2 class="section__title">Start free. Upgrade when you're ready.</h2>
+          <p class="section__lead">Everything you need to choose a pet is free. Premium adds breed-smart daily care for the life of your pet.</p>
+        </div>
+
+        <div class="billing reveal" role="group" aria-label="Choose billing period">
+          <button id="billMonthly" class="active" type="button">Monthly</button>
+          <button class="toggle" id="billToggle" type="button" role="switch" aria-checked="false" aria-label="Toggle annual billing"></button>
+          <button id="billAnnual" type="button">Annual <span class="save-badge">Save 33%</span></button>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal" style="--delay:.05s">
+            <div class="plan__name">Free</div>
+            <p class="plan__desc">Everything you need to choose your perfect pet.</p>
+            <div class="plan__price"><b>$0</b><span>forever</span></div>
+            <p class="plan__note">No card required</p>
+            <ul class="plan__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 85-breed encyclopedia</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12-question breed-match quiz</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Side-by-side breed comparison</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited pet profiles</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Save your favourite breeds</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Download free</a>
+          </article>
+
+          <article class="plan plan--featured reveal" style="--delay:.12s">
+            <div class="plan__tag">7-day free trial</div>
+            <div class="plan__name">Premium</div>
+            <p class="plan__desc">Breed-smart daily care for the life of your pet.</p>
+            <div class="plan__price"><b id="planPrice">$5.99</b><span id="planPeriod">/ month</span></div>
+            <p class="plan__note" id="planNote">Billed monthly · cancel anytime</p>
+            <ul class="plan__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Everything in Free</b></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Daily care dashboard &amp; streaks</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Full health tracking</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Smart breed-aware reminders</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Milestone tracking</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Start 7-day free trial</a>
+          </article>
+        </div>
+        <p class="price-region">Prices shown in USD and may vary by region. Subscriptions are billed through the App Store and renew automatically until cancelled.</p>
+      </div>
+    </section>
+
+    <!-- ============ LOVE / BENEFITS ============ -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--gold">Made for real pet parents</span>
+          <h2 class="section__title">Why people choose Best Friend</h2>
+        </div>
+        <div class="love__grid">
+          <article class="bcard reveal" style="--delay:.04s">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h3>Choose with confidence</h3>
+            <p>No more guessing. Find a breed that genuinely fits your home and routine.</p>
+          </article>
+          <article class="bcard reveal" style="--delay:.1s">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3>Never miss the basics</h3>
+            <p>Feeding, walks, grooming and vet dates — organised and gently reminded.</p>
+          </article>
+          <article class="bcard reveal" style="--delay:.16s">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6 12 20l-7.5-7.4a4.5 4.5 0 1 1 6.4-6.3l1.1 1.1 1.1-1.1a4.5 4.5 0 1 1 6.4 6.3z"/></svg></div>
+            <h3>Advice that fits</h3>
+            <p>Breed-specific guidance, not one-size-fits-all tips that miss the mark.</p>
+          </article>
+          <article class="bcard reveal" style="--delay:.22s">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14" /></svg></div>
+            <h3>Grows with your pet</h3>
+            <p>From a brand-new puppy or kitten to the senior years — guidance for every stage.</p>
+          </article>
+        </div>
+        <p class="review-note">
+          <span class="hero__stars">★★★★★</span>
+          Loved the app? Your real App&nbsp;Store reviews will shine right here — we'll add them as they roll in.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Good to know</span>
+          <h2 class="section__title">Frequently asked questions</h2>
+        </div>
+        <div class="faq__list">
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">Is Best Friend free?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Yes. Downloading the app, the 85-breed encyclopedia, the breed-match quiz, comparisons and unlimited pet profiles are all free. Premium unlocks daily care, full health tracking and reminders.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">What do I get with Premium?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>The daily care dashboard with breed-specific tasks and streaks, full health tracking (weight, vet visits, vaccinations, medications), smart reminders and milestone tracking. Premium starts with a 7-day free trial.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">Which devices is it on?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Best Friend is available now on iPhone and iPad through the App Store. An Android version is coming soon.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">How does breed matching work?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>You answer 12 quick questions about your home, schedule and preferences. We score 85 dog and cat breeds against your lifestyle and explain why each one is a good fit.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">Can I cancel anytime?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Absolutely. Manage or cancel your subscription anytime from your App Store account settings — our <a href="support.html">Support page</a> has step-by-step instructions.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">Is my pet's data private?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Your pet's information stays private to your account. Read our <a href="privacy.html">Privacy Policy</a> for the full details.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section cta-band">
+      <img class="cta-band__bg" src="assets/img/cta-dog.jpg" alt="" aria-hidden="true" width="1600" height="700" loading="lazy" />
+      <div class="container cta-band__inner reveal">
+        <h2>Meet your Best Friend today</h2>
+        <p>Find your perfect match and give them the care they deserve — free to start, on iPhone and iPad.</p>
+        <div class="hero__actions">
+          <a class="appstore" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener" aria-label="Download on the App Store">
+            <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85.5-19-27.2-47.5-42.2-85.2-45-35.8-2.7-75 21-89.2 21-15 0-49.6-20-76.4-20C71.1 138.9 18 175.8 18 250.5c0 22.6 4.1 46 12.4 70.1 11 31.6 50.7 109 92.1 107.7 21.6-.5 36.9-15.4 65-15.4 27.2 0 41.3 15.4 65.3 15.4 41.8-.6 77.7-71 88.2-102.7-56.1-26.4-53.3-77.4-53.3-79zM258.8 90.7c20.9-24.8 19-47.4 18.4-55.5-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.7 20 1.5 38.2-8.8 53.3-26z"/></svg>
+            <span class="appstore__txt"><small>Download on the</small><span>App Store</span></span>
+          </a>
+          <span class="soon" style="color:#cfe9e6">Android coming soon</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="nav__brand" href="#top"><img src="assets/logo/logo.png" alt="" width="42" height="42" /><span>Best Friend</span></a>
+          <p>Your breed-smart companion for choosing and caring for the pet that fits your life.</p>
+          <p class="footer__tagline">Know your breed. Love your pet.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookies.html">Cookie Policy</a>
+            <a href="mailto:thebestfriendapp@gmail.com">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4>Get the app</h4>
+            <a class="appstore" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener" aria-label="Download on the App Store" style="margin-top:4px">
+              <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85.5-19-27.2-47.5-42.2-85.2-45-35.8-2.7-75 21-89.2 21-15 0-49.6-20-76.4-20C71.1 138.9 18 175.8 18 250.5c0 22.6 4.1 46 12.4 70.1 11 31.6 50.7 109 92.1 107.7 21.6-.5 36.9-15.4 65-15.4 27.2 0 41.3 15.4 65.3 15.4 41.8-.6 77.7-71 88.2-102.7-56.1-26.4-53.3-77.4-53.3-79zM258.8 90.7c20.9-24.8 19-47.4 18.4-55.5-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.7 20 1.5 38.2-8.8 53.3-26z"/></svg>
+              <span class="appstore__txt"><small>Download on the</small><span>App Store</span></span>
+            </a>
+            <p style="margin-top:12px;color:#8fb0ad">Android coming soon</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Best Friend · bestfriendapps.com</span>
+        <span>Made with care for pets &amp; their people 🐾</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Best Friend</title>
+  <meta name="description" content="Get help with the Best Friend app: contact us, manage your subscription, restore purchases and find answers to common questions." />
+  <meta name="theme-color" content="#17ead9" />
+  <link rel="icon" type="image/png" href="assets/logo/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .support-hero { padding-top: clamp(128px, 16vw, 168px); padding-bottom: clamp(24px, 4vw, 40px); text-align: center; }
+    .support-hero .hero__bg { position: absolute; }
+    .steps-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(26px, 3vw, 40px); box-shadow: var(--shadow-sm); max-width: 760px; margin-inline: auto; }
+    .steps-ol { counter-reset: s; display: grid; gap: 16px; }
+    .steps-ol li { display: flex; gap: 16px; align-items: flex-start; font-weight: 600; color: var(--ink); }
+    .steps-ol li::before { counter-increment: s; content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 10px; background: var(--grad-brand); color: #04302c; font-family: var(--font-head); font-weight: 800; display: grid; place-items: center; }
+    .steps-note { margin-top: 20px; color: var(--ink-soft); font-size: 0.95rem; }
+    .contact-cards .bcard { text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .contact-cards .bcard .btn { margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html" aria-label="Best Friend home">
+        <img src="assets/logo/logo.png" alt="" width="42" height="42" />
+        <span>Best Friend</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="index.html#features">Features</a>
+        <a class="nav__link" href="index.html#how">How it works</a>
+        <a class="nav__link" href="index.html#pricing">Pricing</a>
+        <a class="nav__link" href="index.html#faq">FAQ</a>
+        <a class="nav__link" href="support.html">Support</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--primary nav__cta" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Download</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="support.html">Support</a>
+    <a class="btn btn--primary btn--lg" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener">Download free</a>
+  </div>
+
+  <main>
+    <section class="hero support-hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <span class="eyebrow reveal">Support</span>
+        <h1 class="section__title reveal" style="--delay:.05s">We're here to help 🐾</h1>
+        <p class="section__lead reveal" style="--delay:.1s; margin-inline:auto; max-width:560px;">Questions about Best Friend, your subscription, or your pet's data? Find quick answers below or get in touch — we usually reply within a day.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="love__grid contact-cards" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); max-width: 760px; margin-inline: auto;">
+          <article class="bcard reveal">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></div>
+            <h3>Email us</h3>
+            <p>The fastest way to reach a real human.</p>
+            <a class="btn btn--primary" href="mailto:thebestfriendapp@gmail.com">thebestfriendapp@gmail.com</a>
+          </article>
+          <article class="bcard reveal" style="--delay:.1s">
+            <div class="bcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></div>
+            <h3>Read the FAQ</h3>
+            <p>Most questions are answered on the main page.</p>
+            <a class="btn btn--ghost" href="index.html#faq">Go to FAQ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manage subscription -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--gold">Billing</span>
+          <h2 class="section__title">Manage or cancel your subscription</h2>
+          <p class="section__lead">Best Friend Premium is billed securely through your Apple account. You're always in control.</p>
+        </div>
+        <div class="steps-card reveal">
+          <ol class="steps-ol">
+            <li><span>Open the <b>Settings</b> app on your iPhone or iPad.</span></li>
+            <li><span>Tap your <b>name</b> at the top, then tap <b>Subscriptions</b>.</span></li>
+            <li><span>Select <b>Best Friend</b> from your list of subscriptions.</span></li>
+            <li><span>Choose a different plan, or tap <b>Cancel Subscription</b>.</span></li>
+          </ol>
+          <p class="steps-note">Cancelling stops future renewals — you'll keep Premium until the end of your current billing period. To <b>restore</b> a previous purchase on a new device, open the app and tap <b>Restore Purchases</b> on the Premium screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Common questions</span>
+          <h2 class="section__title">Quick answers</h2>
+        </div>
+        <div class="faq__list">
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">How do I start my free trial?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Download Best Friend from the App Store, open the Premium screen and tap to start your 7-day free trial. You won't be charged until the trial ends, and you can cancel anytime before then.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">How do I restore my purchase on a new phone?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Sign in with the same Apple ID, open the app and tap <b>Restore Purchases</b> on the Premium screen. Your subscription will reactivate automatically.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">How do I manage my pet's data or delete my account?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>You can edit or remove your pets and data from within the app's settings. If you'd like your account fully removed, email us at <a href="mailto:thebestfriendapp@gmail.com">thebestfriendapp@gmail.com</a> and we'll take care of it. See our <a href="privacy.html">Privacy Policy</a> for details.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" aria-expanded="false">Which devices are supported?<span class="faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+            <div class="faq-item__a"><div><p>Best Friend works on iPhone and iPad. An Android version is on the way — check back soon.</p></div></div>
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:32px; color:var(--ink-soft)">Still stuck? Email <a href="mailto:thebestfriendapp@gmail.com" style="color:var(--cyan-deep);font-weight:700">thebestfriendapp@gmail.com</a> and we'll help.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="nav__brand" href="index.html"><img src="assets/logo/logo.png" alt="" width="42" height="42" /><span>Best Friend</span></a>
+          <p>Your breed-smart companion for choosing and caring for the pet that fits your life.</p>
+          <p class="footer__tagline">Know your breed. Love your pet.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#how">How it works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookies.html">Cookie Policy</a>
+            <a href="mailto:thebestfriendapp@gmail.com">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4>Get the app</h4>
+            <a class="appstore" href="https://apps.apple.com/app/id6761103192" target="_blank" rel="noopener" aria-label="Download on the App Store" style="margin-top:4px">
+              <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.2-37 16.6-65 50.5-85.5-19-27.2-47.5-42.2-85.2-45-35.8-2.7-75 21-89.2 21-15 0-49.6-20-76.4-20C71.1 138.9 18 175.8 18 250.5c0 22.6 4.1 46 12.4 70.1 11 31.6 50.7 109 92.1 107.7 21.6-.5 36.9-15.4 65-15.4 27.2 0 41.3 15.4 65.3 15.4 41.8-.6 77.7-71 88.2-102.7-56.1-26.4-53.3-77.4-53.3-79zM258.8 90.7c20.9-24.8 19-47.4 18.4-55.5-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.7 20 1.5 38.2-8.8 53.3-26z"/></svg>
+              <span class="appstore__txt"><small>Download on the</small><span>App Store</span></span>
+            </a>
+            <p style="margin-top:12px;color:#8fb0ad">Android coming soon</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Best Friend · bestfriendapps.com</span>
+        <span>Made with care for pets &amp; their people 🐾</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

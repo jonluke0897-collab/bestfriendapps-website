@@ -1,0 +1,8 @@
+# Local tooling — not part of the published site
+.claude/
+_build/
+*.py
+
+# OS junk
+.DS_Store
+Thumbs.db
