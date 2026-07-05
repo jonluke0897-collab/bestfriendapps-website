@@ -1,0 +1,126 @@
+/* =================================================================
+   Best Friend — Breed-match quiz (teaser).  Loaded on quiz.html only.
+   Uses the design tokens from styles.css (:root).
+   ================================================================= */
+
+.quiz-main { padding-block: clamp(28px, 6vw, 72px); min-height: 72vh; }
+.quiz-shell { width: 100%; max-width: 680px; margin-inline: auto; }
+.quiz-stage[hidden] { display: none; }
+.quiz-fade { animation: quizFade 0.4s var(--ease); }
+@keyframes quizFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Progress ---------- */
+.quiz-progress { margin-bottom: 22px; }
+.quiz-progress__meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-head); font-weight: 700; font-size: 0.82rem;
+  color: var(--ink-soft); margin-bottom: 8px; letter-spacing: 0.02em;
+}
+.quiz-progress__track { height: 8px; border-radius: var(--r-pill); background: var(--line); overflow: hidden; }
+.quiz-progress__bar { height: 100%; width: 0%; border-radius: var(--r-pill); background: var(--grad-brand); transition: width 0.45s var(--ease); }
+
+/* ---------- Card ---------- */
+.quiz-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-md);
+  padding: clamp(22px, 4vw, 38px);
+}
+
+/* ---------- Intro ---------- */
+.quiz-intro { text-align: center; }
+.quiz-intro__emoji { font-size: 3.2rem; line-height: 1; margin-bottom: 12px; }
+.quiz-intro h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin-bottom: 12px; }
+.quiz-intro h1 .gradient-text { display: inline; }
+.quiz-intro p { color: var(--ink-soft); font-size: 1.08rem; max-width: 46ch; margin: 0 auto 24px; }
+.quiz-meta { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 20px; color: var(--ink-faint); font-weight: 700; font-size: 0.86rem; }
+.quiz-meta span { display: inline-flex; align-items: center; gap: 7px; }
+.quiz-meta svg { width: 15px; height: 15px; color: var(--cyan-deep); }
+
+/* ---------- Question ---------- */
+.quiz-q__title { font-size: clamp(1.3rem, 3.4vw, 1.8rem); margin-bottom: 22px; line-height: 1.2; }
+.quiz-options { display: grid; gap: 12px; }
+.quiz-option {
+  display: flex; align-items: center; gap: 14px; text-align: left; width: 100%;
+  padding: 16px 18px; border-radius: var(--r-md); border: 2px solid var(--line);
+  background: var(--surface); font-family: var(--font-body); font-weight: 600;
+  font-size: 1.02rem; color: var(--ink);
+  transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.quiz-option:hover { border-color: var(--cyan); transform: translateY(-2px); }
+.quiz-option.is-selected { border-color: var(--cyan-deep); background: var(--bg-mint); }
+.quiz-option__check {
+  flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--line);
+  display: grid; place-items: center; transition: all var(--t-fast) var(--ease);
+}
+.quiz-option.is-selected .quiz-option__check { background: var(--cyan-deep); border-color: var(--cyan-deep); }
+.quiz-option__check svg { width: 14px; height: 14px; color: #fff; opacity: 0; transition: opacity var(--t-fast); }
+.quiz-option.is-selected .quiz-option__check svg { opacity: 1; }
+.quiz-hint { margin-top: 14px; font-size: 0.85rem; color: var(--ink-faint); font-weight: 600; text-align: center; }
+
+/* ---------- Nav ---------- */
+.quiz-nav { display: flex; gap: 12px; margin-top: 24px; }
+.quiz-nav .btn--primary { flex: 1; }
+.quiz-nav .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: var(--shadow-sm); }
+
+/* ---------- Result ---------- */
+.result-hero {
+  position: relative; overflow: hidden; text-align: center;
+  border-radius: var(--r-lg); padding: clamp(28px, 5vw, 44px) clamp(20px, 4vw, 36px);
+  background: var(--grad-brand-soft); border: 1px solid #cdeee9;
+}
+.result-eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-head); font-weight: 800; font-size: 0.72rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-deep); background: var(--gold-soft);
+  padding: 6px 13px; border-radius: var(--r-pill); margin-bottom: 18px;
+}
+.result-ring {
+  width: 132px; height: 132px; border-radius: 50%; margin: 0 auto 6px;
+  background: conic-gradient(var(--cyan-deep) calc(var(--pct) * 1%), #cbe9e4 0);
+  display: grid; place-items: center;
+}
+.result-ring__inner { width: 104px; height: 104px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+.result-ring__pct { font-family: var(--font-head); font-weight: 800; font-size: 2rem; color: var(--ink); line-height: 1; }
+.result-ring__lbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+.result-breed { font-size: clamp(1.9rem, 5.5vw, 2.9rem); margin: 8px 0 0; }
+.result-blurb { color: var(--ink-soft); max-width: 48ch; margin: 10px auto 0; font-size: 0.98rem; }
+.result-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+.result-tag { font-family: var(--font-head); font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: var(--r-pill); background: rgba(255, 255, 255, 0.72); color: var(--cyan-ink); border: 1px solid #cdeee9; }
+
+.result-reasons h3, .result-others h3 { font-size: 1.05rem; margin-bottom: 12px; }
+.result-reason { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.result-reason:last-child { border-bottom: 0; }
+.result-reason__ic { flex: none; width: 26px; height: 26px; border-radius: 50%; background: rgba(23, 234, 217, 0.14); display: grid; place-items: center; margin-top: 1px; }
+.result-reason__ic svg { width: 15px; height: 15px; color: var(--cyan-deep); }
+.result-reason p { color: var(--ink); font-weight: 600; }
+
+.result-others { margin-top: 24px; }
+.result-other { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--r-md); margin-bottom: 8px; background: var(--surface); }
+.result-other__name { font-family: var(--font-head); font-weight: 700; }
+.result-other__meta { font-size: 0.8rem; color: var(--ink-faint); text-transform: capitalize; }
+.result-other__pct { font-family: var(--font-head); font-weight: 800; color: var(--cyan-deep); font-size: 1.1rem; }
+
+.result-cta { margin-top: 28px; text-align: center; background: var(--grad-ink); border-radius: var(--r-lg); padding: clamp(26px, 4vw, 40px); }
+.result-cta h3 { color: #fff; font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: 8px; }
+.result-cta p { color: #cfe9e6; margin-bottom: 4px; max-width: 46ch; margin-inline: auto; }
+.result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.btn--onink { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.32); box-shadow: none; }
+.btn--onink:hover { background: rgba(255, 255, 255, 0.22); transform: translateY(-3px); box-shadow: none; }
+
+.result-restart { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-head); font-weight: 700; color: var(--ink-soft); margin-top: 22px; padding: 8px 14px; border-radius: var(--r-pill); }
+.result-restart:hover { color: var(--cyan-deep); background: var(--bg-mint); }
+.result-foot { text-align: center; margin-top: 16px; color: var(--ink-faint); font-size: 0.85rem; }
+
+.quiz-toast {
+  position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
+  background: var(--ink); color: #fff; font-weight: 700; font-family: var(--font-head);
+  padding: 12px 22px; border-radius: var(--r-pill); box-shadow: var(--shadow-lg);
+  opacity: 0; pointer-events: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease); z-index: 300;
+}
+.quiz-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-fade { animation: none; }
+  .quiz-option:hover { transform: none; }
+}
