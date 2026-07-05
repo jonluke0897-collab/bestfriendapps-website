@@ -120,8 +120,8 @@
   var planNote = $("#planNote");
 
   var PRICES = {
-    monthly: { price: "$5.99", period: "/ month", note: "Billed monthly · cancel anytime" },
-    annual:  { price: "$47.99", period: "/ year", note: "Just $4.00/mo, billed annually · cancel anytime" }
+    monthly: { price: "$9.99", period: "/ month", note: "Billed monthly · cancel anytime" },
+    annual:  { price: "$79.99", period: "/ year", note: "Just $6.67/mo, billed annually · cancel anytime" }
   };
 
   function setBilling(mode) {
