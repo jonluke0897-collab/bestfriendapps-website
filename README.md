@@ -49,7 +49,7 @@ Open the file in any text editor (even Notepad, but VS Code is nicer) and use Fi
 
 | I want to change… | File | Find this |
 |---|---|---|
-| The App Store link | `index.html` & `support.html` | `id6761103192` |
+| The Google Play link | all 5 `.html` pages & `js/quiz.js` | `com.bestfriendapp.app` |
 | The Premium price | `js/main.js` | `PRICES` (top of the pricing section) |
 | The contact email | both `.html` files | `thebestfriendapp@gmail.com` |
 | The headline | `index.html` | `Find the` |
@@ -79,10 +79,10 @@ Once it's live on Netlify or GitHub Pages, add the custom domain in that service
 
 ## ✅ Worth updating later
 
-- **Real reviews:** the “Why people choose Best Friend” section has a note where your real App Store reviews can go. Once you have a few, they can replace the placeholder.
+- **Real reviews:** the “Why people choose Best Friend” section has a note where your real Google Play reviews can go. Once you have a few, they can replace the placeholder.
 - **Legal pages:** the Privacy Policy and Cookie Policy are embedded from Termly on `privacy.html` and `cookies.html` (linked in the footers). There's no Terms of Use yet — if you need one, generate it on Termly and we can add a `terms.html` the same way. To swap in updated Termly text later, replace the content between the `Termly … embed` comments on those two pages.
 - **Cookie banner (optional):** the pages above are the policy *documents*. If you want the actual consent **pop-up banner**, grab Termly's Consent Management install script (`app.termly.io/resource-blocker/…`) and it gets added to every page's `<head>`. The site sets no tracking cookies of its own, so this is optional.
-- **Price:** if you change the App Store price from $5.99/$47.99, update `PRICES` in `js/main.js` to match.
+- **Price:** the site shows **$9.99/month · $79.99/year** (set in `PRICES` in `js/main.js`). If you change the price on Google Play, update `PRICES` to match.
 
 ---
 
