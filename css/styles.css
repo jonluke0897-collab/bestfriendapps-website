@@ -136,18 +136,14 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 }
 .btn--primary:hover::after, .btn--gold:hover::after { transform: translateX(120%); }
 
-/* App Store badge button */
-.appstore {
-  display: inline-flex; align-items: center; gap: 12px;
-  background: var(--ink); color: #fff; padding: 11px 22px 11px 18px;
-  border-radius: 16px; box-shadow: var(--shadow-md);
+/* Google Play badge button */
+.play-badge {
+  display: inline-flex; align-items: center;
+  border-radius: 14px;
   transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
-.appstore:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.appstore svg { width: 26px; height: 26px; flex: none; }
-.appstore__txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
-.appstore__txt small { font-size: 0.66rem; opacity: 0.85; font-weight: 500; }
-.appstore__txt span { font-family: var(--font-head); font-weight: 800; font-size: 1.18rem; }
+.play-badge:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.play-badge img { height: 54px; width: auto; display: block; border-radius: 12px; }
 .soon {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.9rem; font-weight: 700; color: var(--ink-soft);
@@ -546,6 +542,5 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 .legal-doc li { margin: 4px 0; }
 .legal-doc img { display: inline; }
 
-/* Footer App Store badge must stay a flex badge (footer link rules set display:block) */
-.footer__col a.appstore { display: inline-flex; padding: 11px 22px 11px 18px; color: #fff; }
-.footer__col a.appstore:hover { color: #fff; }
+/* Footer Google Play badge must stay inline (footer link rules set display:block) */
+.footer__col a.play-badge { display: inline-flex; }

@@ -7,9 +7,9 @@
   "use strict";
 
   var BREEDS = window.BF_BREEDS || [];
-  var APP_STORE = "https://apps.apple.com/app/id6761103192";
-  var SHARE_LINK = APP_STORE + "?utm_source=web_quiz&utm_medium=result_share";
-  var CTA_LINK = APP_STORE + "?utm_source=web_quiz&utm_medium=result_cta";
+  var PLAY_STORE = "https://play.google.com/store/apps/details?id=com.bestfriendapp.app";
+  var SHARE_LINK = PLAY_STORE + "&utm_source=web_quiz&utm_medium=result_share";
+  var CTA_LINK = PLAY_STORE + "&utm_source=web_quiz&utm_medium=result_cta";
 
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
 
