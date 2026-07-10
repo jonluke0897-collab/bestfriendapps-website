@@ -6,3 +6,16 @@ _build/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# --- Private materials — keep OUT of this public repo ---
+/App Implementation Plan/
+/Instagram/
+/Play Store builds + JSON Key/
+/Best Friend - Feature Opportunities.docx
+
+# Credentials / signing keys — never commit to a public repo
+*.keystore
+*.jks
+*.p8
+*-key.json
+*service-account*.json
