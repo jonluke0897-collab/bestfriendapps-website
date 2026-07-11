@@ -148,3 +148,15 @@
   var yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 })();
+
+/* ---------- TikTok: track Google Play download clicks ---------- */
+document.addEventListener("DOMContentLoaded", function () {
+  var storeLinks = document.querySelectorAll('a[href*="play.google.com"]');
+  for (var i = 0; i < storeLinks.length; i++) {
+    storeLinks[i].addEventListener("click", function () {
+      if (window.ttq) {
+        ttq.track("ClickButton", { content_name: "Google Play - Download" });
+      }
+    });
+  }
+});
