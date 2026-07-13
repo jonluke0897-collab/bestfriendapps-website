@@ -295,13 +295,23 @@
     track("Contact", { content_type: "product", content_name: "Quiz Result Shared", description: top.breed.name });
 
     var emoji = top.breed.species === "dog" ? "🐶" : "🐱";
+    /* Share the breed's own page (m/<slug>.html) instead of the raw Play
+       link: it carries a per-breed Open Graph card, so Facebook/X show the
+       match rather than a generic store listing, and it funnels friends into
+       the quiz. Falls back to the store link for any breed without a page. */
+    var slug = top.breed.slug;
+    var hasPage = window.BF_BREED_IMAGE && BF_BREED_IMAGE(slug);
+    var shareUrl = hasPage
+      ? "https://bestfriendapps.com/m/" + slug + ".html?s=" + top.score +
+        "&utm_source=share&utm_medium=quiz_result&utm_content=" + slug
+      : SHARE_LINK;
     var msg = "I'm a " + top.score + "% match with a " + top.breed.name + " " + emoji + " — find your perfect pet with Best Friend!";
     if (navigator.share) {
-      navigator.share({ title: "My Best Friend breed match", text: msg, url: SHARE_LINK }).catch(function () {});
+      navigator.share({ title: "My Best Friend breed match", text: msg, url: shareUrl }).catch(function () {});
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(msg + " " + SHARE_LINK).then(function () { toast("Copied to clipboard!"); }, function () { toast("Couldn't copy"); });
+      navigator.clipboard.writeText(msg + " " + shareUrl).then(function () { toast("Copied to clipboard!"); }, function () { toast("Couldn't copy"); });
     } else {
-      toast("Share: " + SHARE_LINK);
+      toast("Share: " + shareUrl);
     }
   }
 
