@@ -19,3 +19,18 @@ Thumbs.db
 *.p8
 *-key.json
 *service-account*.json
+
+# --- Added: keep private / non-deployed material out of the PUBLIC repo ---
+/Marketing/
+/_source-photos/
+node_modules/
+
+# Breed-photo tooling artefacts (not part of the site).
+# Every real breed photo is named after its slug, so anything starting
+# with "_" is scaffolding and should never be published.
+assets/breeds/_*
+assets/breeds/dogs.png
+assets/breeds/cats.png
+
+# The one-off move script
+MOVE-OUT-OF-ONEDRIVE.ps1

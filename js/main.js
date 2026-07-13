@@ -149,14 +149,11 @@
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 })();
 
-/* ---------- TikTok: track Google Play download clicks ---------- */
-document.addEventListener("DOMContentLoaded", function () {
-  var storeLinks = document.querySelectorAll('a[href*="play.google.com"]');
-  for (var i = 0; i < storeLinks.length; i++) {
-    storeLinks[i].addEventListener("click", function () {
-      if (window.ttq) {
-        ttq.track("ClickButton", { content_name: "Google Play - Download" });
-      }
-    });
-  }
-});
+/* ---------- Google Play click tracking now lives in js/track.js ----------
+   The old handler bound at DOMContentLoaded, so it only saw links that already
+   existed on page load -- it silently MISSED the quiz result CTA, which is
+   injected after the user finishes the quiz and is the most valuable click on
+   the site. js/track.js uses a delegated listener (so it catches dynamically
+   injected links), fires the `Download` standard event, and rewrites every Play
+   link with a `referrer` payload so Play Console can attribute the install to a
+   specific creator/hook. Do not re-add a handler here -- it would double-count. */
