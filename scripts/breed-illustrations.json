@@ -1,0 +1,512 @@
+[
+ {
+  "slug": "abyssinian",
+  "name": "Abyssinian",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/Kq8__jmkT.jpg"
+ },
+ {
+  "slug": "akita",
+  "name": "Akita",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/akita/Japaneseakita.jpg"
+ },
+ {
+  "slug": "american-shorthair",
+  "name": "American Shorthair",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/8NdgktL3E.jpg"
+ },
+ {
+  "slug": "australian-cattle-dog",
+  "name": "Australian Cattle Dog",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/cattledog-australian/IMG_3469.jpg"
+ },
+ {
+  "slug": "australian-shepherd",
+  "name": "Australian Shepherd",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/australian-shepherd/pepper2.jpg"
+ },
+ {
+  "slug": "balinese",
+  "name": "Balinese",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/DBmIBhhyv.jpg"
+ },
+ {
+  "slug": "basset-hound",
+  "name": "Basset Hound",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/hound-basset/n02088238_11917.jpg"
+ },
+ {
+  "slug": "beagle",
+  "name": "Beagle",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/beagle/n02088364_959.jpg"
+ },
+ {
+  "slug": "bengal",
+  "name": "Bengal",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/8ciqdpaO5.jpg"
+ },
+ {
+  "slug": "bernese-mountain-dog",
+  "name": "Bernese Mountain Dog",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/mountain-bernese/n02107683_4688.jpg"
+ },
+ {
+  "slug": "bichon-frise",
+  "name": "Bichon Frise",
+  "species": "dog",
+  "illustrationUrl": null
+ },
+ {
+  "slug": "birman",
+  "name": "Birman",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/TKKtEJZVl.jpg"
+ },
+ {
+  "slug": "bloodhound",
+  "name": "Bloodhound",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/hound-blood/n02088466_9359.jpg"
+ },
+ {
+  "slug": "bombay",
+  "name": "Bombay",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/BkksyH95Z.jpg"
+ },
+ {
+  "slug": "border-collie",
+  "name": "Border Collie",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/collie-border/n02106166_1426.jpg"
+ },
+ {
+  "slug": "boston-terrier",
+  "name": "Boston Terrier",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/terrier-boston/bostonTerrier_000003.jpg"
+ },
+ {
+  "slug": "boxer",
+  "name": "Boxer",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/boxer/n02108089_4730.jpg"
+ },
+ {
+  "slug": "british-shorthair",
+  "name": "British Shorthair",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/M1Rh3CPp_.jpg"
+ },
+ {
+  "slug": "bull-terrier",
+  "name": "Bull Terrier",
+  "species": "dog",
+  "illustrationUrl": null
+ },
+ {
+  "slug": "bulldog",
+  "name": "Bulldog",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/bulldog-english/jager-2.jpg"
+ },
+ {
+  "slug": "burmese",
+  "name": "Burmese",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/92D9NZLs0.jpg"
+ },
+ {
+  "slug": "cane-corso",
+  "name": "Cane Corso",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/mastiff-bull/n02108422_1879.jpg"
+ },
+ {
+  "slug": "cavalier-king-charles-spaniel",
+  "name": "Cavalier King Charles Spaniel",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_9250.jpg"
+ },
+ {
+  "slug": "chartreux",
+  "name": "Chartreux",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/OUZlUVIco.jpg"
+ },
+ {
+  "slug": "chihuahua",
+  "name": "Chihuahua",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/chihuahua/n02085620_7738.jpg"
+ },
+ {
+  "slug": "cocker-spaniel",
+  "name": "Cocker Spaniel",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_10157.jpg"
+ },
+ {
+  "slug": "cornish-rex",
+  "name": "Cornish Rex",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/kOAHCDEzA.jpg"
+ },
+ {
+  "slug": "dachshund",
+  "name": "Dachshund",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/dachshund/dachshund-1018409_640.jpg"
+ },
+ {
+  "slug": "dalmatian",
+  "name": "Dalmatian",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg"
+ },
+ {
+  "slug": "devon-rex",
+  "name": "Devon Rex",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/_BhPUA-L-.jpg"
+ },
+ {
+  "slug": "doberman-pinscher",
+  "name": "Doberman Pinscher",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/doberman/n02107142_1886.jpg"
+ },
+ {
+  "slug": "egyptian-mau",
+  "name": "Egyptian Mau",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/tp0nHtyze.jpg"
+ },
+ {
+  "slug": "english-springer-spaniel",
+  "name": "English Springer Spaniel",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/springer-english/n02102040_7328.jpg"
+ },
+ {
+  "slug": "exotic-shorthair",
+  "name": "Exotic Shorthair",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/4qG-5FC0J.jpg"
+ },
+ {
+  "slug": "french-bulldog",
+  "name": "French Bulldog",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/bulldog-french/n02108915_11327.jpg"
+ },
+ {
+  "slug": "german-shepherd",
+  "name": "German Shepherd",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/german-shepherd/n02106662_8002.jpg"
+ },
+ {
+  "slug": "german-shorthaired-pointer",
+  "name": "German Shorthaired Pointer",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/pointer-germanlonghair/hans3.jpg"
+ },
+ {
+  "slug": "golden-retriever",
+  "name": "Golden Retriever",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/retriever-golden/n02099601_3388.jpg"
+ },
+ {
+  "slug": "great-dane",
+  "name": "Great Dane",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/dane-great/n02109047_1480.jpg"
+ },
+ {
+  "slug": "greyhound",
+  "name": "Greyhound",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/greyhound-italian/n02091032_1684.jpg"
+ },
+ {
+  "slug": "havana-brown",
+  "name": "Havana Brown",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/gLfmOKHCA.jpg"
+ },
+ {
+  "slug": "havanese",
+  "name": "Havanese",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/havanese/00100trPORTRAIT_00100_BURST20191222103956878_COVER.jpg"
+ },
+ {
+  "slug": "himalayan",
+  "name": "Himalayan",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/wu8gMdmfo.jpg"
+ },
+ {
+  "slug": "irish-setter",
+  "name": "Irish Setter",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/setter-irish/n02100877_5686.jpg"
+ },
+ {
+  "slug": "jack-russell-terrier",
+  "name": "Jack Russell Terrier",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/terrier-russell/IMG_7714.jpg"
+ },
+ {
+  "slug": "japanese-bobtail",
+  "name": "Japanese Bobtail",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/d8AjzQxLp.jpg"
+ },
+ {
+  "slug": "korat",
+  "name": "Korat",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/BbsNPAeop.jpg"
+ },
+ {
+  "slug": "labrador-retriever",
+  "name": "Labrador Retriever",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/labrador/Lucy.jpg"
+ },
+ {
+  "slug": "lhasa-apso",
+  "name": "Lhasa Apso",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/lhasa/n02098413_14953.jpg"
+ },
+ {
+  "slug": "maine-coon",
+  "name": "Maine Coon",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/Wq_eTQalE.jpg"
+ },
+ {
+  "slug": "maltese",
+  "name": "Maltese",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/maltese/n02085936_6034.jpg"
+ },
+ {
+  "slug": "manx",
+  "name": "Manx",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/P2NukwZ0n.jpg"
+ },
+ {
+  "slug": "miniature-schnauzer",
+  "name": "Miniature Schnauzer",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_3035.jpg"
+ },
+ {
+  "slug": "newfoundland",
+  "name": "Newfoundland",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/newfoundland/n02111277_160.jpg"
+ },
+ {
+  "slug": "norwegian-forest-cat",
+  "name": "Norwegian Forest Cat",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/ZUumV9qmY.jpg"
+ },
+ {
+  "slug": "oriental-shorthair",
+  "name": "Oriental Shorthair",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/0iSghgPeZ.jpg"
+ },
+ {
+  "slug": "papillon",
+  "name": "Papillon",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/papillon/n02086910_3991.jpg"
+ },
+ {
+  "slug": "pembroke-welsh-corgi",
+  "name": "Pembroke Welsh Corgi",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_6608.jpg"
+ },
+ {
+  "slug": "persian",
+  "name": "Persian",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/yehyXOeid.jpg"
+ },
+ {
+  "slug": "pomeranian",
+  "name": "Pomeranian",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/pomeranian/n02112018_6098.jpg"
+ },
+ {
+  "slug": "poodle",
+  "name": "Poodle",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/poodle-standard/n02113799_3055.jpg"
+ },
+ {
+  "slug": "ragdoll",
+  "name": "Ragdoll",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/Sy9SgPE0B.jpg"
+ },
+ {
+  "slug": "rhodesian-ridgeback",
+  "name": "Rhodesian Ridgeback",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_310.jpg"
+ },
+ {
+  "slug": "rottweiler",
+  "name": "Rottweiler",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/rottweiler/n02106550_5754.jpg"
+ },
+ {
+  "slug": "russian-blue",
+  "name": "Russian Blue",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/S-1YzA7-_.jpg"
+ },
+ {
+  "slug": "saint-bernard",
+  "name": "Saint Bernard",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/stbernard/n02109525_7656.jpg"
+ },
+ {
+  "slug": "samoyed",
+  "name": "Samoyed",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/samoyed/n02111889_4381.jpg"
+ },
+ {
+  "slug": "savannah",
+  "name": "Savannah",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/62Onx4gRb.jpg"
+ },
+ {
+  "slug": "scottish-fold",
+  "name": "Scottish Fold",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/tOGSsMx5J.jpg"
+ },
+ {
+  "slug": "selkirk-rex",
+  "name": "Selkirk Rex",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/l-LrP1VY4.jpg"
+ },
+ {
+  "slug": "shetland-sheepdog",
+  "name": "Shetland Sheepdog",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/sheepdog-shetland/n02105855_19486.jpg"
+ },
+ {
+  "slug": "shih-tzu",
+  "name": "Shih Tzu",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/shihtzu/n02086240_6882.jpg"
+ },
+ {
+  "slug": "siamese",
+  "name": "Siamese",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/-AiX8QA5I.png"
+ },
+ {
+  "slug": "siberian-husky",
+  "name": "Siberian Husky",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/husky/n02110185_12380.jpg"
+ },
+ {
+  "slug": "singapura",
+  "name": "Singapura",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/4Q5bRarQO.jpg"
+ },
+ {
+  "slug": "snowshoe",
+  "name": "Snowshoe",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/t4f-Ov8YD.jpg"
+ },
+ {
+  "slug": "somali",
+  "name": "Somali",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/AllGB9l57.jpg"
+ },
+ {
+  "slug": "sphynx",
+  "name": "Sphynx",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/c9sGDkRoi.jpg"
+ },
+ {
+  "slug": "tonkinese",
+  "name": "Tonkinese",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/A7Dsj7g1x.png"
+ },
+ {
+  "slug": "turkish-angora",
+  "name": "Turkish Angora",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/xTo8K7wb3.jpg"
+ },
+ {
+  "slug": "turkish-van",
+  "name": "Turkish Van",
+  "species": "cat",
+  "illustrationUrl": "https://cdn2.thecatapi.com/images/Co5BH7YZT.jpg"
+ },
+ {
+  "slug": "vizsla",
+  "name": "Vizsla",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/vizsla/n02100583_3274.jpg"
+ },
+ {
+  "slug": "weimaraner",
+  "name": "Weimaraner",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/weimaraner/n02092339_392.jpg"
+ },
+ {
+  "slug": "whippet",
+  "name": "Whippet",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/whippet/n02091134_18435.jpg"
+ },
+ {
+  "slug": "yorkshire-terrier",
+  "name": "Yorkshire Terrier",
+  "species": "dog",
+  "illustrationUrl": "https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_5176.jpg"
+ }
+]

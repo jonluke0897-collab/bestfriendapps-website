@@ -7,9 +7,18 @@
   "use strict";
 
   var BREEDS = window.BF_BREEDS || [];
+
+  /* Attribution + pixel events live in js/track.js (loaded before this file).
+     These links carry the inbound utm_content (e.g. hook03) through to the Play
+     Store `referrer`, so Play Console can tell you which creator drove the
+     install. Degrades gracefully if track.js is ever missing. */
   var PLAY_STORE = "https://play.google.com/store/apps/details?id=com.bestfriendapp.app";
-  var SHARE_LINK = PLAY_STORE + "&utm_source=web_quiz&utm_medium=result_share";
-  var CTA_LINK = PLAY_STORE + "&utm_source=web_quiz&utm_medium=result_cta";
+  var BF = window.BF || {};
+  function playLink(placement) { return BF.playUrl ? BF.playUrl(placement) : PLAY_STORE; }
+  function track(evt, props) { if (BF.track) BF.track(evt, props); }
+
+  var SHARE_LINK = playLink("quiz_result_share");
+  var CTA_LINK = playLink("quiz_result_cta");
 
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
 
@@ -211,6 +220,18 @@
       resultMount.innerHTML = '<div class="quiz-card" style="text-align:center">We couldn\'t load breed data — please refresh and try again.</div>';
     } else {
       renderResult(matches);
+
+      /* Quiz completed. This is the event to optimise TikTok delivery toward --
+         it is the deepest intent signal the website can produce. */
+      track("CompleteRegistration", {
+        content_type: "product",
+        content_name: "Breed Quiz Completed",
+        description: matches[0].breed.name,
+      });
+
+      /* The result CTA was only just injected, so it missed the page-load
+         decoration pass. Attribute it now, before anyone can click it. */
+      if (BF.decorateStoreLinks) BF.decorateStoreLinks(resultMount);
     }
     flowStage.hidden = true;
     resultStage.hidden = false;
@@ -221,12 +242,17 @@
     var top = matches[0];
     var others = matches.slice(1, 4);
     var emoji = top.breed.species === "dog" ? "🐶" : "🐱";
+    var topImg = window.BF_BREED_IMAGE ? BF_BREED_IMAGE(top.breed.slug) : null;
 
     resultMount.innerHTML =
       '<div class="quiz-fade">' +
         '<div class="result-hero">' +
           '<span class="result-eyebrow">★ Your top match</span>' +
-          '<div class="result-ring" style="--pct:' + top.score + '"><div class="result-ring__inner"><div><div class="result-ring__pct">' + top.score + '%</div><div class="result-ring__lbl">match</div></div></div></div>' +
+          '<div class="result-photo' + (topImg ? '' : ' result-photo--failed') + '" style="--pct:' + top.score + '">' +
+            (topImg ? '<img class="result-photo__img" src="' + topImg + '" alt="' + esc(top.breed.name) + '" onerror="this.parentNode.classList.add(\'result-photo--failed\')">' : '') +
+            '<div class="result-photo__fallback">' + emoji + '</div>' +
+            '<div class="result-photo__badge">' + top.score + '%<small>match</small></div>' +
+          '</div>' +
           '<h1 class="result-breed">' + esc(top.breed.name) + " " + emoji + "</h1>" +
           (top.breed.blurb ? '<p class="result-blurb">' + esc(top.breed.blurb) + "</p>" : "") +
           '<div class="result-tags">' + top.breed.temperament.slice(0, 4).map(function (t) { return '<span class="result-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
@@ -240,7 +266,11 @@
             '<div class="result-others"><h3>Other great matches</h3>' +
             others.map(function (m) {
               var e = m.breed.species === "dog" ? "🐶" : "🐱";
-              return '<div class="result-other"><div><div class="result-other__name">' + esc(m.breed.name) + " " + e + '</div><div class="result-other__meta">' + esc(cap(m.breed.sizeCategory)) + " " + esc(m.breed.species) + '</div></div><div class="result-other__pct">' + m.score + "%</div></div>";
+              var mi = window.BF_BREED_IMAGE ? BF_BREED_IMAGE(m.breed.slug) : null;
+              var thumb = mi
+                ? '<img class="result-other__thumb" src="' + mi + '" alt="' + esc(m.breed.name) + '" loading="lazy" onerror="this.removeAttribute(\'src\')">'
+                : '<div class="result-other__thumb result-other__thumb--emoji">' + e + '</div>';
+              return '<div class="result-other">' + thumb + '<div class="result-other__txt"><div class="result-other__name">' + esc(m.breed.name) + " " + e + '</div><div class="result-other__meta">' + esc(cap(m.breed.sizeCategory)) + " " + esc(m.breed.species) + '</div></div><div class="result-other__pct">' + m.score + "%</div></div>";
             }).join("") + "</div>" : "") +
         "</div>" +
 
@@ -262,6 +292,8 @@
   }
 
   function shareResult(top) {
+    track("Contact", { content_type: "product", content_name: "Quiz Result Shared", description: top.breed.name });
+
     var emoji = top.breed.species === "dog" ? "🐶" : "🐱";
     var msg = "I'm a " + top.score + "% match with a " + top.breed.name + " " + emoji + " — find your perfect pet with Best Friend!";
     if (navigator.share) {
@@ -308,6 +340,9 @@
 
     var startBtn = $("#quizStart");
     if (startBtn) startBtn.addEventListener("click", function () {
+      /* Quiz started -- top of the on-site funnel. */
+      track("ViewContent", { content_type: "product", content_name: "Breed Quiz Started" });
+
       introStage.hidden = true;
       flowStage.hidden = false;
       renderQuestion();
