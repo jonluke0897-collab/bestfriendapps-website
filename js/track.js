@@ -19,6 +19,23 @@
 (function (window, document) {
   "use strict";
 
+  /* ---------------- Google Analytics 4 ----------------
+     Injected here rather than in each page <head> so every page that loads
+     track.js -- including the generated m/<slug>.html share pages -- reports
+     to GA4 with zero extra markup. Termly's auto-blocker gates it on consent,
+     exactly like the TikTok pixel. */
+  var GA4_ID = "G-MSJTM8MJQG";
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", GA4_ID);
+  (function () {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+    document.head.appendChild(s);
+  })();
+
   var PACKAGE = "com.bestfriendapp.app";
   var PLAY_BASE = "https://play.google.com/store/apps/details?id=" + PACKAGE;
   var STORAGE_KEY = "bf_attribution";
@@ -135,12 +152,16 @@
   /* Guarded: Termly's auto-blocker may hold the pixel until the visitor
      consents, so window.ttq can legitimately be undefined. Never throw. */
   function track(event, props) {
-    if (!window.ttq || typeof window.ttq.track !== "function") return;
     var payload = props || {};
-    /* Attach the hook/format ID to every event so TikTok reporting can
-       be sliced by creative, not just by campaign. */
+    /* Attach the hook/format ID to every event so reporting can be sliced
+       by creative, not just by campaign. */
     if (attribution.utm_content) payload.content_id = attribution.utm_content;
-    try { window.ttq.track(event, payload); } catch (e) {}
+    if (window.ttq && typeof window.ttq.track === "function") {
+      try { window.ttq.track(event, payload); } catch (e) {}
+    }
+    if (typeof window.gtag === "function") {
+      try { window.gtag("event", event, payload); } catch (e) {}
+    }
   }
 
   /* One delegated listener on the document catches Play Store links that
