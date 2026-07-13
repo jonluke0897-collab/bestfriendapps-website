@@ -151,6 +151,14 @@
 .btn--onink { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.32); box-shadow: none; }
 .btn--onink:hover { background: rgba(255, 255, 255, 0.22); transform: translateY(-3px); box-shadow: none; }
 
+/* iOS "notify me" capture — sits inside the dark .result-cta panel */
+.ios-wait { margin: 18px auto 0; max-width: 420px; }
+.ios-wait__row { display: flex; gap: 10px; flex-wrap: wrap; }
+.ios-wait__input { flex: 1 1 200px; min-width: 0; padding: 13px 16px; border: 1.5px solid rgba(255, 255, 255, 0.32); border-radius: var(--r-md); font: inherit; font-size: 1rem; background: rgba(255, 255, 255, 0.96); color: var(--ink); }
+.ios-wait__input:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(23, 234, 217, 0.3); }
+.ios-wait__note { font-size: 0.82rem; color: #cfe9e6; margin: 10px 0 0; }
+.ios-wait__note.ios-wait__ok { color: #8ff0e4; font-weight: 700; }
+
 .result-restart { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-head); font-weight: 700; color: var(--ink-soft); margin-top: 22px; padding: 8px 14px; border-radius: var(--r-pill); }
 .result-restart:hover { color: var(--cyan-deep); background: var(--bg-mint); }
 .result-foot { text-align: center; margin-top: 16px; color: var(--ink-faint); font-size: 0.85rem; }

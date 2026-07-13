@@ -20,6 +20,14 @@
   var SHARE_LINK = playLink("quiz_result_share");
   var CTA_LINK = playLink("quiz_result_cta");
 
+  /* iOS visitors can't install the Android app, so the result screen offers a
+     "notify me" email capture instead of the Play button. Emails POST to a
+     Google Apps Script web app that appends them to a Sheet (the launch list). */
+  var IOS_WAITLIST_URL = "https://script.google.com/macros/s/AKfycbxgH4CL4eP7opFois0x7FxGfwLdUkakMyrQ6G47oLhYn-8wNIYBt_RBOD62nIjcmeHeYg/exec";
+  var IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) ||
+    /[?&]ios=1\b/.test(location.search); // preview the iOS flow on any device
+
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
 
   var $ = function (s, c) { return (c || document).querySelector(s); };
@@ -274,14 +282,29 @@
             }).join("") + "</div>" : "") +
         "</div>" +
 
-        '<div class="result-cta">' +
-          "<h3>See your full match — and how to care for them</h3>" +
-          "<p>Get every match ranked, save your favourites, and unlock breed-smart daily care in the Best Friend app.</p>" +
-          '<div class="result-actions">' +
-            '<a class="btn btn--gold btn--lg" href="' + CTA_LINK + '" target="_blank" rel="noopener">Get the app free</a>' +
-            '<button type="button" class="btn btn--onink btn--lg" id="qShare">Share result</button>' +
-          "</div>" +
-        "</div>" +
+        (IS_IOS
+          ? '<div class="result-cta">' +
+              "<h3>📱 iPhone version — coming soon</h3>" +
+              "<p>Best Friend is on Android today. Drop your email and we'll tell you the day the iPhone version lands — you'll be first in line.</p>" +
+              '<form class="ios-wait" id="iosWait">' +
+                '<div class="ios-wait__row">' +
+                  '<input class="ios-wait__input" id="iosEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>' +
+                  '<button class="btn btn--gold btn--lg" type="submit">Notify me</button>' +
+                "</div>" +
+                '<p class="ios-wait__note" id="iosWaitNote">No spam — just one email when iOS is ready.</p>' +
+              "</form>" +
+              '<div class="result-actions" style="margin-top:14px">' +
+                '<button type="button" class="btn btn--onink btn--lg" id="qShare">Share result</button>' +
+              "</div>" +
+            "</div>"
+          : '<div class="result-cta">' +
+              "<h3>See your full match — and how to care for them</h3>" +
+              "<p>Get every match ranked, save your favourites, and unlock breed-smart daily care in the Best Friend app.</p>" +
+              '<div class="result-actions">' +
+                '<a class="btn btn--gold btn--lg" href="' + CTA_LINK + '" target="_blank" rel="noopener">Get the app free</a>' +
+                '<button type="button" class="btn btn--onink btn--lg" id="qShare">Share result</button>' +
+              "</div>" +
+            "</div>") +
 
         '<div style="text-align:center"><button type="button" class="result-restart" id="qRestart">↺ Retake the quiz</button></div>' +
         '<p class="result-foot">This is a quick taster — the full app asks a few more questions for an even sharper match.</p>' +
@@ -289,6 +312,41 @@
 
     var sh = $("#qShare", resultMount); if (sh) sh.addEventListener("click", function () { shareResult(top); });
     var rs = $("#qRestart", resultMount); if (rs) rs.addEventListener("click", restart);
+    var iosForm = $("#iosWait", resultMount);
+    if (iosForm) iosForm.addEventListener("submit", function (ev) { ev.preventDefault(); submitIosWaitlist(top); });
+  }
+
+  /* iOS "notify me" — POST the email (+ match context) to the Apps Script web
+     app, which appends a row to the waitlist Sheet. no-cors + urlencoded keeps
+     it a simple request (no CORS preflight); the response is opaque, so we
+     optimistically confirm on resolve. */
+  function submitIosWaitlist(top) {
+    var input = $("#iosEmail");
+    var note = $("#iosWaitNote");
+    var btn = $("#iosWait button[type=submit]");
+    var email = input && input.value ? input.value.trim() : "";
+    if (!email) return;
+    if (btn) btn.disabled = true;
+    track("Lead", { content_type: "product", content_name: "iOS waitlist", description: top.breed.name });
+    var body = new URLSearchParams();
+    body.append("email", email);
+    body.append("breed", top.breed.name);
+    body.append("score", String(top.score));
+    body.append("source", "quiz_result_ios");
+    body.append("ua", navigator.userAgent);
+    function done(ok) {
+      if (!note) return;
+      if (ok) {
+        note.textContent = "You're on the list — we'll email you the day iOS launches. 🎉";
+        note.className = "ios-wait__note ios-wait__ok";
+        if (input) input.disabled = true;
+      } else {
+        note.textContent = "Hmm, that didn't send — please try again.";
+        if (btn) btn.disabled = false;
+      }
+    }
+    fetch(IOS_WAITLIST_URL, { method: "POST", mode: "no-cors", body: body })
+      .then(function () { done(true); }, function () { done(false); });
   }
 
   function shareResult(top) {
