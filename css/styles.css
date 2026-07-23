@@ -191,6 +191,22 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 .nav__cta { display: none; }
 .nav__toggle { display: inline-flex; flex-direction: column; gap: 5px; padding: 10px; border-radius: 12px; }
 .nav__toggle span { width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: transform var(--t-fast) var(--ease), opacity var(--t-fast); }
+/* Over the photo hero the header sits on the image until it gains .scrolled and
+   its white background. The links land on bright sky, where white text measures
+   as low as 2.8:1, so they get a white pill and keep their dark ink instead.
+   The brand and burger stay white — they sit over the dark left of the scrim. */
+.has-photo-hero .site-header:not(.scrolled) .nav__brand { color: #fff; }
+.has-photo-hero .site-header:not(.scrolled) .nav__links {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-radius: var(--r-pill); padding: 5px 6px; box-shadow: var(--shadow-sm);
+}
+.has-photo-hero .site-header:not(.scrolled) .nav__toggle {
+  background: rgba(6, 28, 32, 0.42);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.has-photo-hero .site-header:not(.scrolled) .nav__toggle span { background: #fff; }
+
 .nav__toggle.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .nav__toggle.open span:nth-child(2) { opacity: 0; }
 .nav__toggle.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
@@ -210,35 +226,101 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 .mobile-menu .btn { margin-top: 16px; align-self: center; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; padding-top: clamp(120px, 18vw, 180px); padding-bottom: clamp(60px, 9vw, 110px); overflow: hidden; }
+/* Tuned so the headline, subhead, both CTAs and the photo cluster all clear
+   the fold on a 1366x768 laptop. */
+.hero { position: relative; padding-top: clamp(100px, 11vw, 128px); padding-bottom: clamp(48px, 6vw, 76px); overflow: hidden; }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1;
   background:
     radial-gradient(60% 50% at 80% 12%, rgba(56, 189, 248, 0.18), transparent 70%),
     radial-gradient(55% 45% at 12% 8%, rgba(23, 234, 217, 0.16), transparent 70%);
 }
-.hero__inner { display: grid; gap: clamp(40px, 6vw, 64px); align-items: center; }
-.hero__title { font-size: clamp(2.4rem, 6.2vw, 4.2rem); }
-.hero__sub { margin-top: 22px; font-size: clamp(1.1rem, 1.8vw, 1.32rem); color: var(--ink-soft); max-width: 30ch; }
-.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 34px; }
-.hero__trust { display: flex; align-items: center; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.hero__inner { display: grid; gap: clamp(32px, 4vw, 48px); align-items: center; }
+.hero__title { font-size: clamp(2.15rem, 4.4vw, 3.25rem); }
+.hero__sub { margin-top: 16px; font-size: clamp(1.05rem, 1.5vw, 1.18rem); color: var(--ink-soft); max-width: 42ch; }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 24px; }
+.hero__trust { display: flex; align-items: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
 .hero__stars { color: var(--gold); letter-spacing: 2px; font-size: 1.1rem; }
 .hero__trust small { color: var(--ink-soft); font-weight: 600; }
 .hero__chip {
-  display: inline-flex; align-items: center; gap: 8px; background: var(--surface);
-  box-shadow: var(--shadow-sm); border-radius: var(--r-pill); padding: 8px 16px;
-  font-weight: 700; font-size: 0.92rem; color: var(--ink);
+  display: inline-flex; align-items: center; gap: 7px; background: var(--surface);
+  box-shadow: var(--shadow-sm); border-radius: var(--r-pill); padding: 7px 13px;
+  font-weight: 700; font-size: 0.86rem; color: var(--ink);
 }
 .hero__chip svg { width: 18px; height: 18px; color: var(--cyan-deep); }
 
-/* Hero visual: phone + glow + arc */
-.hero__visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 420px; }
-.hero__glow {
-  position: absolute; width: 115%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle, rgba(23, 234, 217, 0.28), rgba(56, 189, 248, 0.12) 45%, transparent 70%);
-  filter: blur(10px); z-index: -1; animation: glowPulse 7s ease-in-out infinite;
+/* ---------- Photo hero (home page only) ----------
+   The dog photo fills the whole section and every hero element is restyled for
+   light-on-dark. Scoped to .hero--photo so support.html's plain .hero, which
+   shares .hero__bg, is untouched. */
+/* Min-height gives the photo real presence; capped so the CTA still clears the
+   fold on short laptops, and the section deliberately runs a little past the
+   viewport bottom as a scroll cue. */
+.hero--photo {
+  color: #fff; display: flex; align-items: center;
+  min-height: min(92vh, 900px);
 }
-.arc-deco { position: absolute; width: 88%; max-width: 460px; z-index: -1; opacity: 0.9; top: 2%; }
+.hero--photo > .container { width: 100%; }
+.hero--photo .hero__bg { display: none; }
+.hero__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero__media img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+  /* Biased up: a centre crop of this 4:3 frame decapitates the walker once the
+     section goes wide enough to be letterboxed. */
+  object-position: 50% 26%;
+}
+/* Angled so the heaviest cover sits under the text column on the left while the
+   walker and the sunlit valley on the right stay readable. */
+.hero__scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(6, 28, 32, 0.90) 0%, rgba(6, 28, 32, 0.72) 34%,
+                            rgba(6, 28, 32, 0.34) 62%, rgba(6, 28, 32, 0.10) 100%),
+    linear-gradient(to top, rgba(6, 28, 32, 0.55) 0%, transparent 42%);
+}
+/* Single column: text spans the full width, so the angled scrim's faded right
+   end lands under the headline (measured 3.4:1). Go vertical and even instead. */
+@media (max-width: 879px) {
+  .hero__scrim {
+    background: linear-gradient(to bottom, rgba(6, 28, 32, 0.74) 0%,
+                                           rgba(6, 28, 32, 0.62) 45%,
+                                           rgba(6, 28, 32, 0.80) 100%);
+  }
+}
+.hero--photo .hero__title { color: #fff; text-shadow: 0 2px 24px rgba(4, 20, 24, 0.35); }
+.hero--photo .hero__sub { color: rgba(255, 255, 255, 0.88); }
+.hero--photo .eyebrow { color: #eafffb; background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(6px); }
+.hero--photo .soon { color: rgba(255, 255, 255, 0.82); }
+/* Glass chips instead of the solid white pills used on light sections. */
+.hero--photo .hero__chip {
+  background: rgba(255, 255, 255, 0.14); color: #fff; box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.hero--photo .hero__chip svg { color: var(--cyan); }
+
+/* Numbered feature index, mirroring the reference layout's right-hand list.
+   It lands over the sunlit valley — the brightest part of the frame, where the
+   angled scrim has faded to ~0.2 — so it carries its own dark glass panel.
+   Without it white text here measures 2.5:1 against WCAG's 4.5:1. */
+.hero__index {
+  list-style: none; display: none;
+  background: rgba(6, 28, 32, 0.42);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-lg); padding: 4px 18px 6px;
+}
+.hero__index li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 0; font-weight: 700; font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.94);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.hero__index li:first-child { border-top: 0; }
+.hero__index span {
+  font-family: var(--font-head); font-weight: 800; font-size: 0.78rem;
+  color: var(--cyan); letter-spacing: 0.06em;
+}
 
 /* ---------- Phone mockup ---------- */
 .phone {
@@ -254,7 +336,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
   width: 100%; height: 100%; border-radius: 34px; object-fit: cover; object-position: center top;
   background: #0b0e13; display: block;
 }
-.phone--floaty { animation: float 6.5s ease-in-out infinite; }
 
 /* ---------- Stats strip ---------- */
 .stats {
@@ -468,8 +549,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 .reveal--right { transform: translateX(32px); }
 .reveal--scale { transform: scale(0.94); }
 
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
-@keyframes glowPulse { 0%, 100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.06); opacity: 1; } }
 
 /* ---------- Decorative paw pattern ---------- */
 .paw-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5; }
@@ -492,7 +571,10 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 @media (min-width: 880px) {
   .nav__links, .nav__cta { display: flex; }
   .nav__toggle { display: none; }
-  .hero__inner { grid-template-columns: 1.05fr 0.95fr; }
+  /* Right column is now just the numbered index, so it needs far less room
+     than the photo card it replaced. */
+  .hero__inner { grid-template-columns: 1.5fr 0.5fr; align-items: end; }
+  .hero__index { display: block; }
   .promise__inner { grid-template-columns: 1fr 1fr; }
   .intel__inner { grid-template-columns: 1.1fr 0.9fr; }
   .footer__top { grid-template-columns: 1.4fr 2fr; }
@@ -518,7 +600,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .phone--floaty, .hero__glow { animation: none !important; }
 }
 
 /* ---------- Refinements ---------- */

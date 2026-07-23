@@ -41,6 +41,11 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Hero photo is the LCP element — fetch it alongside the stylesheet -->
+  <link rel="preload" as="image" href="assets/img/hero-walk-1900.webp"
+        imagesrcset="assets/img/hero-walk-900.webp 900w, assets/img/hero-walk-1400.webp 1400w, assets/img/hero-walk-1900.webp 1900w, assets/img/hero-walk-2400.webp 2400w"
+        imagesizes="100vw" fetchpriority="high" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,7 +61,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-photo-hero">
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ============ HEADER ============ -->
@@ -96,8 +101,17 @@
 
   <main id="top">
     <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero__bg" aria-hidden="true"></div>
+    <section class="hero hero--photo">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/img/hero-walk-1900.webp"
+             srcset="assets/img/hero-walk-900.webp 900w,
+                     assets/img/hero-walk-1400.webp 1400w,
+                     assets/img/hero-walk-1900.webp 1900w,
+                     assets/img/hero-walk-2400.webp 2400w"
+             sizes="100vw" alt=""
+             width="1900" height="1425" fetchpriority="high" decoding="async" />
+        <div class="hero__scrim"></div>
+      </div>
       <div class="container hero__inner">
         <div class="hero__content">
           <span class="eyebrow reveal">
@@ -129,21 +143,13 @@
           </div>
         </div>
 
-        <div class="hero__visual reveal reveal--scale" style="--delay:.2s">
-          <div class="hero__glow" aria-hidden="true"></div>
-          <svg class="arc-deco" viewBox="0 0 300 170" aria-hidden="true">
-            <defs><linearGradient id="sun" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#17ead9"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
-            <g fill="none" stroke="url(#sun)" stroke-width="11" stroke-linecap="round">
-              <path d="M22 162 A128 128 0 0 1 278 162"/>
-              <path d="M52 162 A98 98 0 0 1 248 162" opacity=".7"/>
-              <path d="M82 162 A68 68 0 0 1 218 162" opacity=".5"/>
-              <path d="M112 162 A38 38 0 0 1 188 162" opacity=".32"/>
-            </g>
-          </svg>
-          <div class="phone phone--floaty">
-            <img class="phone__screen" src="assets/screens/quiz-intro.png" alt="Best Friend app quiz that matches you with the right dog or cat breed for your lifestyle" width="300" height="634" />
-          </div>
-        </div>
+        <ol class="hero__index reveal" style="--delay:.2s">
+          <li><span>01</span> Breed match quiz</li>
+          <li><span>02</span> 85-breed encyclopedia</li>
+          <li><span>03</span> AI care assistant</li>
+          <li><span>04</span> Health &amp; growth tracking</li>
+          <li><span>05</span> Breed-smart training</li>
+        </ol>
       </div>
     </section>
 
