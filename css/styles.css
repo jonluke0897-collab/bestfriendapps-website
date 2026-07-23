@@ -1,5 +1,5 @@
 /* =================================================================
-   Best Friend — Marketing site
+   Best Friend, marketing site
    Design system + components. Mobile-first, vanilla CSS.
    Brand: cyan/teal (#17EAD9) + gold (#F59E0B), light & airy.
    ================================================================= */
@@ -194,7 +194,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 /* Over the photo hero the header sits on the image until it gains .scrolled and
    its white background. The links land on bright sky, where white text measures
    as low as 2.8:1, so they get a white pill and keep their dark ink instead.
-   The brand and burger stay white — they sit over the dark left of the scrim. */
+   The brand and burger stay white; they sit over the dark left of the scrim. */
 .has-photo-hero .site-header:not(.scrolled) .nav__brand { color: #fff; }
 .has-photo-hero .site-header:not(.scrolled) .nav__links {
   background: rgba(255, 255, 255, 0.94);
@@ -300,8 +300,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1
 .hero--photo .hero__chip svg { color: var(--cyan); }
 
 /* Numbered feature index, mirroring the reference layout's right-hand list.
-   It lands over the sunlit valley — the brightest part of the frame, where the
-   angled scrim has faded to ~0.2 — so it carries its own dark glass panel.
+   It lands over the sunlit valley, the brightest part of the frame, where the
+   angled scrim has faded to ~0.2, so it carries its own dark glass panel.
    Without it white text here measures 2.5:1 against WCAG's 4.5:1. */
 .hero__index {
   list-style: none; display: none;

@@ -1,15 +1,15 @@
 /* =================================================================
-   Best Friend — social share pages + OG cards
+   Best Friend: social share pages + OG cards
 
    For every breed that has a photo, generates:
-     1. assets/breeds/cards/<slug>.jpg  — a 1200x630 Open Graph card
+     1. assets/breeds/cards/<slug>.jpg  = a 1200x630 Open Graph card
         (breed photo + branded panel) so Facebook/X/etc. show the match
         instead of a generic Play Store listing.
-     2. m/<slug>.html — a lightweight landing page whose <head> points at
+     2. m/<slug>.html = a lightweight landing page whose <head> points at
         that card, and whose body funnels the visitor into the quiz + app.
 
    The quiz "Share" button links to m/<slug>.html, so a friend sees the
-   breed card, taps through, takes the quiz, and installs — a viral loop.
+   breed card, taps through, takes the quiz, and installs, a viral loop.
 
    Facebook reads STATIC per-breed metadata, so the card can't carry the
    viewer's exact score (that varies per person); the live score is shown
@@ -186,7 +186,7 @@ function pageHtml(b) {
     <h1 class="share-title">${esc(b.name)} ${emoji}</h1>
     <p class="share-blurb">${esc(b.blurb || "A wonderful companion.")}</p>
     <div class="share-actions">
-      <a class="btn btn--gold btn--lg" href="${quizLink}">Find your match — take the quiz</a>
+      <a class="btn btn--gold btn--lg" href="${quizLink}">Find your match: take the quiz</a>
       <a class="btn btn--onink btn--lg" data-bf-placement="share_page"
          href="https://play.google.com/store/apps/details?id=com.bestfriendapp.app" target="_blank" rel="noopener">Get the Best Friend app</a>
     </div>
@@ -214,7 +214,7 @@ for (const b of BREEDS) {
     await fs.access(path.join(PHOTOS, b.slug + ".webp"));
     withPhoto.push(b);
   } catch {
-    /* no photo — skip (its share falls back to the quiz page) */
+    /* no photo, so skip (its share falls back to the quiz page) */
   }
 }
 
@@ -232,7 +232,7 @@ for (const b of targets) {
     console.log(`  OK   ${b.slug}`);
   } catch (e) {
     failed.push(b.slug);
-    console.log(`  FAIL ${b.slug} — ${e.message}`);
+    console.log(`  FAIL ${b.slug}: ${e.message}`);
   }
 }
 

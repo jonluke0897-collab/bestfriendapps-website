@@ -1,5 +1,5 @@
 /* =================================================================
-   Best Friend — attribution + TikTok pixel events.
+   Best Friend: attribution + TikTok pixel events.
 
    Solves three things:
      1. UTMs from an inbound ad/creator link are captured and kept for
@@ -40,7 +40,7 @@
   var PLAY_BASE = "https://play.google.com/store/apps/details?id=" + PACKAGE;
   var STORAGE_KEY = "bf_attribution";
 
-  /* UTM keys we care about. utm_content is the important one — that's
+  /* UTM keys we care about. utm_content is the important one; that's
      where the hook/format ID lives (e.g. utm_content=hook03). */
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
@@ -83,7 +83,7 @@
     UTM_KEYS.forEach(function (k) {
       if (query[k]) { fresh[k] = query[k]; hasFresh = true; }
     });
-    /* TikTok click ID — lets you match a click to a conversion later. */
+    /* TikTok click ID; lets you match a click to a conversion later. */
     if (query.ttclid) { fresh.ttclid = query.ttclid; hasFresh = true; }
 
     if (hasFresh) { save(fresh); return fresh; }
@@ -120,7 +120,7 @@
   }
 
   /* Rewrite every Play Store link on the page to carry attribution.
-     Safe to call repeatedly — re-run it after injecting new markup
+     Safe to call repeatedly; re-run it after injecting new markup
      (the quiz result screen does exactly that). */
   function decorateStoreLinks(root) {
     var scope = root || document;
@@ -165,7 +165,7 @@
   }
 
   /* One delegated listener on the document catches Play Store links that
-     were injected AFTER page load — which is precisely the quiz result
+     were injected AFTER page load, which is precisely the quiz result
      CTA, the single most valuable click on the site, and the one the old
      DOMContentLoaded-bound handler in main.js silently missed. */
   document.addEventListener("click", function (e) {
@@ -178,7 +178,7 @@
 
     track("Download", {
       content_type: "product",
-      content_name: "Google Play — " + (a.getAttribute("data-bf-placement") || "page"),
+      content_name: "Google Play: " + (a.getAttribute("data-bf-placement") || "page"),
     });
   }, true);
 

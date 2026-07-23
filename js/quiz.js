@@ -1,5 +1,5 @@
 /* =================================================================
-   Best Friend — web breed-match quiz (teaser). Vanilla JS, no deps.
+   Best Friend: web breed-match quiz (teaser). Vanilla JS, no deps.
    The matching logic mirrors the app (convex/quiz.ts) over the subset
    of questions asked here, so results are consistent with the app.
    ================================================================= */
@@ -38,13 +38,13 @@
   /* ---------- Questions (teaser subset of the app's 12) ---------- */
   var QUESTIONS = [
     { id: "species_preference", type: "single", emoji: "🐾", text: "What kind of pet are you looking for?", options: [
-      { label: "A dog", value: "dog" }, { label: "A cat", value: "cat" }, { label: "Either — I'm open!", value: "either" } ] },
+      { label: "A dog", value: "dog" }, { label: "A cat", value: "cat" }, { label: "Either, I'm open!", value: "either" } ] },
     { id: "living_space", type: "single", emoji: "🏡", text: "What best describes your home?", options: [
       { label: "Small apartment or condo", value: "apartment_small" }, { label: "Larger apartment or condo", value: "apartment_large" },
       { label: "House with a small yard", value: "house_small_yard" }, { label: "House with a big yard", value: "house_large_yard" } ] },
     { id: "activity_level", type: "single", emoji: "🏃", text: "How active is your daily life?", options: [
       { label: "Mostly relaxed at home", value: "low" }, { label: "Moderately active", value: "moderate" },
-      { label: "Very active — daily walks or runs", value: "high" }, { label: "Extremely active — athlete energy", value: "very_high" } ] },
+      { label: "Very active: daily walks or runs", value: "high" }, { label: "Extremely active: athlete energy", value: "very_high" } ] },
     { id: "hours_home", type: "single", emoji: "🕐", text: "How much are you home each day?", options: [
       { label: "Home most of the day", value: "home_most" }, { label: "Home about half the day", value: "home_half" },
       { label: "Away 6–8 hours", value: "away_moderate" }, { label: "Away most of the day", value: "away_most" } ] },
@@ -79,7 +79,7 @@
       activityLevel: MAPS.activity[activity] != null ? MAPS.activity[activity] : 2,
       timeAtHome: MAPS.hours[hours] != null ? MAPS.hours[hours] : 3,
       experienceLevel: MAPS.experience[exp] != null ? MAPS.experience[exp] : 2,
-      // Not asked in the teaser — neutral defaults so they don't skew results.
+      // Not asked in the teaser; neutral defaults so they don't skew results.
       noiseTolerance: 3, groomingWillingness: 3, budgetLevel: 3,
       priorities: a.top_priorities || [],
       requiresApartmentFriendly: isApartment,
@@ -225,7 +225,7 @@
   function showResult() {
     var matches = computeMatches();
     if (!matches.length) {
-      resultMount.innerHTML = '<div class="quiz-card" style="text-align:center">We couldn\'t load breed data — please refresh and try again.</div>';
+      resultMount.innerHTML = '<div class="quiz-card" style="text-align:center">We couldn\'t load breed data. Please refresh and try again.</div>';
     } else {
       renderResult(matches);
 
@@ -284,21 +284,21 @@
 
         (IS_IOS
           ? '<div class="result-cta">' +
-              "<h3>📱 iPhone version — coming soon</h3>" +
-              "<p>Best Friend is on Android today. Drop your email and we'll tell you the day the iPhone version lands — you'll be first in line.</p>" +
+              "<h3>📱 iPhone version: coming soon</h3>" +
+              "<p>Best Friend is on Android today. Drop your email and we'll tell you the day the iPhone version lands. You'll be first in line.</p>" +
               '<form class="ios-wait" id="iosWait">' +
                 '<div class="ios-wait__row">' +
                   '<input class="ios-wait__input" id="iosEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>' +
                   '<button class="btn btn--gold btn--lg" type="submit">Notify me</button>' +
                 "</div>" +
-                '<p class="ios-wait__note" id="iosWaitNote">No spam — just one email when iOS is ready.</p>' +
+                '<p class="ios-wait__note" id="iosWaitNote">No spam, just one email when iOS is ready.</p>' +
               "</form>" +
               '<div class="result-actions" style="margin-top:14px">' +
                 '<button type="button" class="btn btn--onink btn--lg" id="qShare">Share result</button>' +
               "</div>" +
             "</div>"
           : '<div class="result-cta">' +
-              "<h3>See your full match — and how to care for them</h3>" +
+              "<h3>See your full match, and how to care for them</h3>" +
               "<p>Get every match ranked, save your favourites, and unlock breed-smart daily care in the Best Friend app.</p>" +
               '<div class="result-actions">' +
                 '<a class="btn btn--gold btn--lg" href="' + CTA_LINK + '" target="_blank" rel="noopener">Get the app free</a>' +
@@ -307,7 +307,7 @@
             "</div>") +
 
         '<div style="text-align:center"><button type="button" class="result-restart" id="qRestart">↺ Retake the quiz</button></div>' +
-        '<p class="result-foot">This is a quick taster — the full app asks a few more questions for an even sharper match.</p>' +
+        '<p class="result-foot">This is a quick taster; the full app asks a few more questions for an even sharper match.</p>' +
       "</div>";
 
     var sh = $("#qShare", resultMount); if (sh) sh.addEventListener("click", function () { shareResult(top); });
@@ -316,7 +316,7 @@
     if (iosForm) iosForm.addEventListener("submit", function (ev) { ev.preventDefault(); submitIosWaitlist(top); });
   }
 
-  /* iOS "notify me" — POST the email (+ match context) to the Apps Script web
+  /* iOS "notify me": POST the email (+ match context) to the Apps Script web
      app, which appends a row to the waitlist Sheet. no-cors + urlencoded keeps
      it a simple request (no CORS preflight); the response is opaque, so we
      optimistically confirm on resolve. */
@@ -337,11 +337,11 @@
     function done(ok) {
       if (!note) return;
       if (ok) {
-        note.textContent = "You're on the list — we'll email you the day iOS launches. 🎉";
+        note.textContent = "You're on the list. We'll email you the day iOS launches. 🎉";
         note.className = "ios-wait__note ios-wait__ok";
         if (input) input.disabled = true;
       } else {
-        note.textContent = "Hmm, that didn't send — please try again.";
+        note.textContent = "Hmm, that didn't send. Please try again.";
         if (btn) btn.disabled = false;
       }
     }
@@ -363,7 +363,7 @@
       ? "https://bestfriendapps.com/m/" + slug + ".html?s=" + top.score +
         "&utm_source=share&utm_medium=quiz_result&utm_content=" + slug
       : SHARE_LINK;
-    var msg = "I'm a " + top.score + "% match with a " + top.breed.name + " " + emoji + " — find your perfect pet with Best Friend!";
+    var msg = "I'm a " + top.score + "% match with a " + top.breed.name + " " + emoji + ". Find your perfect pet with Best Friend!";
     if (navigator.share) {
       navigator.share({ title: "My Best Friend breed match", text: msg, url: shareUrl }).catch(function () {});
     } else if (navigator.clipboard && navigator.clipboard.writeText) {

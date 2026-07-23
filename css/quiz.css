@@ -1,5 +1,5 @@
 /* =================================================================
-   Best Friend — Breed-match quiz (teaser).  Loaded on quiz.html only.
+   Best Friend: breed-match quiz (teaser).  Loaded on quiz.html only.
    Uses the design tokens from styles.css (:root).
    ================================================================= */
 
@@ -124,7 +124,7 @@
   white-space: nowrap;
 }
 .result-photo__badge small { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; }
-/* Only shown if the image 404s — the card degrades instead of breaking */
+/* Only shown if the image 404s; the card degrades instead of breaking */
 .result-photo__fallback { display: none; }
 .result-photo--failed { background: var(--grad-brand-soft); display: grid; place-items: center; }
 .result-photo--failed .result-photo__img { display: none; }
@@ -151,7 +151,7 @@
 .btn--onink { background: rgba(255, 255, 255, 0.12); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.32); box-shadow: none; }
 .btn--onink:hover { background: rgba(255, 255, 255, 0.22); transform: translateY(-3px); box-shadow: none; }
 
-/* iOS "notify me" capture — sits inside the dark .result-cta panel */
+/* iOS "notify me" capture, sits inside the dark .result-cta panel */
 .ios-wait { margin: 18px auto 0; max-width: 420px; }
 .ios-wait__row { display: flex; gap: 10px; flex-wrap: wrap; }
 .ios-wait__input { flex: 1 1 200px; min-width: 0; padding: 13px 16px; border: 1.5px solid rgba(255, 255, 255, 0.32); border-radius: var(--r-md); font: inherit; font-size: 1rem; background: rgba(255, 255, 255, 0.96); color: var(--ink); }

@@ -1,5 +1,5 @@
 /* =================================================================
-   Best Friend — site interactions (vanilla JS, no dependencies)
+   Best Friend: site interactions (vanilla JS, no dependencies)
    - Sticky header + scroll progress bar
    - Mobile menu
    - Reveal-on-scroll (IntersectionObserver)
