@@ -41,8 +41,12 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Hero photo is the LCP element; fetch it alongside the stylesheet -->
-  <link rel="preload" as="image" href="assets/img/hero-walk-1900.webp"
+  <!-- Hero photo is the LCP element; fetch it alongside the stylesheet. Two
+       media-scoped preloads so each viewport pulls only its own crop. -->
+  <link rel="preload" as="image" media="(max-width: 879px)"
+        imagesrcset="assets/img/hero-walk-portrait-640.webp 640w, assets/img/hero-walk-portrait-900.webp 900w, assets/img/hero-walk-portrait-1195.webp 1195w"
+        imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" media="(min-width: 880px)" href="assets/img/hero-walk-1900.webp"
         imagesrcset="assets/img/hero-walk-900.webp 900w, assets/img/hero-walk-1400.webp 1400w, assets/img/hero-walk-1900.webp 1900w, assets/img/hero-walk-2400.webp 2400w"
         imagesizes="100vw" fetchpriority="high" />
 
@@ -103,13 +107,22 @@
     <!-- ============ HERO ============ -->
     <section class="hero hero--photo">
       <div class="hero__media" aria-hidden="true">
-        <img src="assets/img/hero-walk-1900.webp"
-             srcset="assets/img/hero-walk-900.webp 900w,
-                     assets/img/hero-walk-1400.webp 1400w,
-                     assets/img/hero-walk-1900.webp 1900w,
-                     assets/img/hero-walk-2400.webp 2400w"
-             sizes="100vw" alt=""
-             width="1900" height="1425" fetchpriority="high" decoding="async" />
+        <picture>
+          <!-- Phones get a 2:3 portrait crop; a landscape photo cover-cropped
+               into a tall phone box shows only a narrow slice and clips the walker. -->
+          <source media="(max-width: 879px)"
+                  srcset="assets/img/hero-walk-portrait-640.webp 640w,
+                          assets/img/hero-walk-portrait-900.webp 900w,
+                          assets/img/hero-walk-portrait-1195.webp 1195w"
+                  sizes="100vw" width="1195" height="1792" />
+          <img src="assets/img/hero-walk-1900.webp"
+               srcset="assets/img/hero-walk-900.webp 900w,
+                       assets/img/hero-walk-1400.webp 1400w,
+                       assets/img/hero-walk-1900.webp 1900w,
+                       assets/img/hero-walk-2400.webp 2400w"
+               sizes="100vw" alt=""
+               width="1900" height="1425" fetchpriority="high" decoding="async" />
+        </picture>
         <div class="hero__scrim"></div>
       </div>
       <div class="container hero__inner">
